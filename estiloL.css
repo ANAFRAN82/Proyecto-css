@@ -1,0 +1,138 @@
+/* Establece márgenes y rellenos en todos los elementos a 0 para evitar inconsistencias */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos básicos para el cuerpo del documento */
+body {
+    display: flex; /* Utiliza un contenedor flexible para organizar el contenido */
+    flex-direction: column; /* Organiza los elementos en columna */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Fuente predeterminada */
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #333; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 10px 0; /* Espaciado interno */
+}
+
+/* Estilos para el menú de navegación */
+nav .menu {
+    display: flex; /* Utiliza un contenedor flexible para el menú */
+    justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal */
+    align-items: center; /* Centra verticalmente los elementos */
+    max-width: 1200px; /* Ancho máximo del menú */
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 0 20px; /* Espaciado interno */
+}
+
+/* Estilos para la lista no ordenada en el menú de navegación */
+nav ul {
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para los elementos de la lista en el menú de navegación */
+nav ul li {
+    display: inline-block; /* Muestra los elementos en línea */
+    margin-right: 20px; /* Espaciado entre elementos */
+}
+
+/* Estilos para los enlaces dentro del menú de navegación */
+nav ul li a {
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Elimina la decoración de subrayado */
+}
+
+/* Contenedor principal del carrusel */
+.carousel-container {
+    display: flex; /* Utiliza un contenedor flexible para el carrusel */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+/* Estilos para el carrusel */
+.carousel {
+    display: grid; /* Utiliza un contenedor de cuadrícula para el carrusel */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre elementos */
+    scroll-snap-type: x mandatory; /* Hace que el desplazamiento horizontal sea suave */
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en dispositivos iOS */
+}
+
+/* Estilos para las secciones */
+section {
+    display: flex; /* Utiliza un contenedor flexible para las secciones */
+    width: 500px; /* Ancho fijo */
+    height: 430px; /* Altura fija */
+    padding: 10px; /* Espaciado interno */
+    background-color: #f4f4f4; /* Color de fondo */
+    margin-top: 20px; /* Espacio por encima del texto */
+    margin-bottom: 20px; /* Espacio por debajo del texto */
+}
+
+/* Estilos para las imágenes dentro de las secciones */
+section img {
+    width: 0px; /* Ancho inicial */
+    flex-grow: 1; /* Permite que las imágenes crezcan dentro del espacio disponible */
+    object-fit: cover; /* Escala y recorta la imagen para ajustarse al contenedor */
+    opacity: .8; /* Opacidad inicial */
+    transition: .5s ease; /* Transición suave */
+}
+
+/* Efecto de aumento de tamaño y cambio de opacidad al pasar el ratón sobre las imágenes */
+section img:hover {
+    width: 200px; /* Ancho al pasar el ratón */
+    opacity: 1; /* Opacidad al pasar el ratón */
+    filter: contrast(120%); /* Ajuste del contraste */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #333; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Alineación centrada */
+    padding: 10px 0; /* Espaciado interno */
+}
+
+@media screen and (min-width:769px) and (max-width: 968px) {
+    .carousel {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas igualmente espaciadas */
+        background-color: cornflowerblue; /* Cambia el color de fondo del carrusel */
+    }
+}
+
+
+@media screen and (min-width:577px) and (max-width: 768px) {
+    .carousel {
+        grid-template-columns: 1fr; /* Una sola columna */
+        background-color: bisque; /* Cambia el color de fondo del carrusel */
+    }
+}
+
+
+@media screen and (min-width:0px) and (max-width:576px) {
+    .carousel {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+    nav {
+        padding: 5px 0; /* Reducir el padding del navbar */
+    }
+    nav ul li {
+        margin-right: 10px; /* Reducir el espacio entre elementos del menú */
+    }
+    section {
+        width: 90%; /* Cambiar el ancho del contenedor al 90% */
+        padding: 5px; /* Relleno de 5px en los lados */
+        margin-top: 10px; /* Margen superior de 10px */
+        margin-bottom: 10px; /* Margen inferior de 10px */
+        margin-left: auto; /* Alinear el margen izquierdo automáticamente */
+        margin-right: auto; /* Alinear el margen derecho automáticamente */
+    }
+}
+
+

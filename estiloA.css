@@ -1,0 +1,196 @@
+/* Establece el margen y el relleno predeterminado para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para la selección de texto */
+::selection {
+    color: #000; /* Color del texto seleccionado */
+    background: #fff; /* Color de fondo del texto seleccionado */
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    position: fixed; /* Fija la posición de la barra de navegación */
+    top: 0; /* Coloca la barra de navegación en la parte superior */
+    left: 0; /* Coloca la barra de navegación en el lado izquierdo */
+    width: 100%; /* Establece el ancho al 100% */
+    background-color: #1b1b1b; /* Color de fondo de la barra de navegación */
+    padding: 10px 0; /* Relleno superior e inferior de la barra de navegación */
+    z-index: 1000; /* Índice z para asegurar que la barra de navegación esté encima de otros elementos */
+}
+
+/* Estilos para el contenedor del menú */
+.menu {
+    max-width: 1250px; /* Ancho máximo del contenedor del menú */
+    margin: auto; /* Centra el contenedor del menú horizontalmente */
+    display: flex; /* Usa el modelo de caja flexible para el contenedor del menú */
+    align-items: center; /* Centra los elementos verticalmente dentro del contenedor del menú */
+    justify-content: space-between; /* Distribuye los elementos del menú uniformemente */
+    padding: 0 20px; /* Relleno izquierdo y derecho del contenedor del menú */
+}
+
+/* Estilos para la lista de elementos del menú */
+.menu ul {
+    display: inline-flex; /* Muestra la lista de elementos del menú como una fila */
+}
+
+/* Estilos para cada ítem del menú */
+.menu ul li {
+    list-style: none; /* Quita los puntos de lista */
+    margin-left: 7px; /* Espacio entre los elementos del menú */
+}
+
+/* Estilos para los enlaces del menú */
+.menu ul li a {
+    text-decoration: none; /* Quita la decoración del enlace */
+    color: #fff; /* Color del texto del enlace */
+    font-size: 18px; /* Tamaño de fuente del texto del enlace */
+    font-weight: 500; /* Peso de la fuente del texto del enlace */
+    padding: 8px 15px; /* Relleno superior e inferior y relleno izquierdo y derecho del enlace */
+    border-radius: 5px; /* Borde redondeado del enlace */
+    transition: all 0.3s ease; /* Transición suave para los cambios de estilo */
+}
+
+/* Estilos al pasar el cursor sobre los enlaces del menú */
+.menu ul li a:hover {
+    background: #fff; /* Cambia el fondo al pasar el cursor */
+    color: #1b1b1b; /* Cambia el color del texto al pasar el cursor */
+}
+
+/* Estilos generales para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif; /* Familia de fuentes predeterminada */
+    background-color: #f2f2f2; /* Color de fondo del cuerpo del documento */
+    display: grid; /* Usa el modelo de caja en cuadrícula */
+    grid-template-rows: auto 1fr auto; /* Define las filas de la cuadrícula */
+    min-height: 100vh; /* Establece la altura mínima del cuerpo al 100% de la ventana */
+}
+
+/* Estilos para los contenedores de los autores en el carrusel */
+.autor {
+    flex: 0 0 auto; /* No crece, no se encoge, ancho automático */
+    width: 300px; /* Ancho fijo del contenedor de autor */
+    margin-right: 20px; /* Espacio entre los contenedores de autor */
+    scroll-snap-align: start; /* Alinea el desplazamiento del carrusel al inicio del contenedor de autor */
+    text-align: center; /* Centra el texto */
+    position: relative; /* Posición relativa para el posicionamiento de la información adicional */
+}
+
+/* Estilos para las imágenes de los autores */
+.autor img {
+    width: 200px; /* Ancho de la imagen del autor */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 50%; /* Borde redondeado */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+/* Estilos para la información adicional de los autores */
+.autor .info {
+    display: none; /* Oculta la información adicional por defecto */
+    background-color: rgba(0, 0, 0, 0.8); /* Color de fondo de la información adicional */
+    color: #fff; /* Color del texto */
+    position: absolute; /* Posición absoluta para superponer la información adicional */
+    bottom: 0; /* Coloca la información adicional en la parte inferior */
+    left: 0; /* Coloca la información adicional en el lado izquierdo */
+    right: 0; /* Coloca la información adicional en el lado derecho */
+    padding: 10px; /* Relleno de la información adicional */
+    margin: 0; /* Margen cero */
+    transition: opacity 0.3s; /* Transición suave de opacidad */
+}
+
+/* Estilos al pasar el cursor sobre el contenedor del autor */
+.autor:hover .info {
+    display: block; /* Muestra la información adicional al pasar el cursor */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    margin-top: 60px; /* Espacio superior */
+    padding: 20px; /* Relleno del contenedor principal */
+    display: flex; /* Usa el modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+/* Estilos para el contenedor del carrusel */
+.carousel-container {
+    display: flex; /* Usa el modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+/* Estilos para el carrusel */
+.carousel {
+    display: grid; /* Usa el modelo de caja en cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Columnas de igual ancho */
+    gap: 20px; /* Espacio entre las imágenes */
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    scroll-snap-type: x mandatory; /* Desplazamiento suave y obligatorio */
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en dispositivos iOS */
+}
+
+/* Estilos para el pie de página */
+footer {
+    grid-row: 3; /* Alinea el pie de página en la tercera fila de la cuadrícula */
+    background-color: rgba(27, 27, 27, 0.8); /* Color de fondo del pie de página */
+    color: #fff; /* Color del texto del pie de página */
+    padding: 20px 0; /* Relleno superior e inferior */
+    text-align: center; /* Centra el texto */
+    display: flex; /* Usa el modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+/* Estilos para el contenido del pie de página */
+.footer-content {
+    max-width: 800px; /* Ancho máximo del contenido del pie de página */
+    margin: auto; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos para las secciones del pie de página */
+.footer-content .footer-section {
+    margin-bottom: 20px; /* Espacio inferior entre secciones */
+}
+
+/* Estilos para los encabezados de sección en el pie de página */
+.footer-content h3 {
+    font-size: 20px; /* Tamaño de fuente de los encabezados de sección */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+/* Estilos para los párrafos en el pie de página */
+.footer-content p {
+    font-size: 16px; /* Tamaño de fuente de los párrafos */
+    line-height: 1.5; /* Altura de línea */
+}
+
+
+
+@media screen and (min-width:769px) and (max-width: 968px) {
+    .carousel {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas en el carrusel */
+    }
+}
+
+@media screen and (min-width:577px) and (max-width: 768px) {
+    .carousel {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en el carrusel */
+    }
+}
+
+.autor:nth-child(n+4) {
+    margin-top: 20px; /* Espacio superior para autores a partir del cuarto */
+}
+
+
+@media screen and (min-width:0px) and (max-width:576px) {
+    .carousel {
+        grid-template-columns: 1fr; /* Una columna en el carrusel */
+    }
+   
+
+    .menu ul li a {
+        padding: 5px 10px; /* Relleno reducido para los elementos del menú */
+        font-size: 14px; /* Tamaño de fuente reducido para los elementos del menú */
+    }
+}
